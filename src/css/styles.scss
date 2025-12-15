@@ -12,7 +12,7 @@ body {
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  max-width: 90%;
+  max-width: 60vw;
   width: 100%;
   margin: 0 auto 30px;
 }
@@ -29,6 +29,9 @@ body {
   padding: 40px 0 90px;
   position: relative;
 }
+#bingo .grid-item.marked .card {
+  background: gold;
+}
 #bingo .grid-item .card .text {
   border-radius: 7px;
   color: #fff;
@@ -43,6 +46,9 @@ body {
   bottom: 6px;
   z-index: 666;
   height: 64px;
+}
+#bingo .grid-item .card .icon {
+  display: none;
 }
 #bingo .grid-item .card .icon img {
   width: 40px;

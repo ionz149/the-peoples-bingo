@@ -1,4 +1,4 @@
-const numbers = [
+const quotes = [
   {
     name: "notarized",
     value: "I wouldn't believe you if your tongue came notarized.",
@@ -126,51 +126,10 @@ const numbers = [
   }
 ];
 const gameBoard = document.getElementById('bingo');
+let clickedCards = new Array();
 
-// shuffles array while keeping the freebie item in center
-function shuffleBoard() {
-
-  // isolate and remove center item
-  const fixedIndex = 12;
-  const fixedItem = numbers[fixedIndex];
-  numbers.splice(fixedIndex, 1);
-
-  // randomization of array
-  let currentIndex = numbers.length;
-  while (currentIndex != 0) {
-    let randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [numbers[currentIndex], numbers[randomIndex]] = [
-      numbers[randomIndex], numbers[currentIndex]];
-  }
-
-  // add ceter item back in
-  numbers.splice(fixedIndex,0,fixedItem);
-
-  // generate grid items html
-  let listItem = "";
-  for ( let i = 0; i < numbers.length; i++ ) {
-    listItem += `
-    <div class="grid-item">
-      <div class="card ${numbers[i].name}">
-        <div class="icon"><img src="${numbers[i].icon}" alt="${numbers[i].name}" /></div>
-        <div class="text">${numbers[i].value}</div>
-      </div>
-    </div>
-    `;
-  }
-  gameBoard.classList.add('game-ready');
-  gameBoard.innerHTML = listItem;
-}
 console.log('Game ready!');
-
-// cards
-let cards = document.querySelectorAll('.grid-item');
-for ( let i = 0; i < numbers.length; i++ ) {
-  console.log(cards);
-  console.log(`${i} - ${numbers[i].name}`);
-}
+shuffleBoard();
 
 // buttons
 let btnShuffle = document.querySelector('.btn-shuffle');
@@ -181,8 +140,9 @@ btnShuffle.addEventListener('click', () => {
   shuffleBoard();
   console.log('Shuffle button clicked!');
   gameBoard.classList.remove('game-active');
-  gameBoard.classList.remove('game-paused');
+  gameBoard.classList.remove('game-pause');
   gameBoard.classList.add('game-ready');
+
 });
 
 btnStart.addEventListener('click', () => {
@@ -190,12 +150,15 @@ btnStart.addEventListener('click', () => {
   btnStart.disabled = true;
   btnPause.disabled = false;
   gameBoard.classList.add('game-active');
-  if ( gameBoard.classList.contains('game-paused') && gameBoard.classList.contains('game-active') ) {
-    console.log('Start button clicked! Game has re-started.')
+  gameBoard.classList.add('game-play');
+  if ( gameBoard.classList.contains('game-pause') && gameBoard.classList.contains('game-active') ) {
+    console.log('Start button clicked! Game has re-started.');
+    console.log(clickedCards);
   } else {
     console.log('Start button clicked! Game has started');
+    console.log(clickedCards);
   }
-  gameBoard.classList.remove('game-paused');
+  gameBoard.classList.remove('game-pause');
   gameBoard.classList.remove('game-ready');
 });
 
@@ -203,11 +166,69 @@ btnPause.addEventListener('click', () => {
   btnShuffle.disabled = false;
   btnStart.disabled = false;
   btnPause.disabled = true;
-  // gameBoard.classList.remove('game-active');
-  gameBoard.classList.add('game-paused');
+  gameBoard.classList.add('game-pause');
+  gameBoard.classList.remove('game-play');
   console.log('Pause button clicked! Game has been paused.');
 });
 
-// run that shit
-shuffleBoard();
+// card click handling
+function cards() {
+  let getCards = Array.from(document.querySelectorAll('.grid-item'));
 
+  for (let i = 0; i < getCards.length; i++) {
+    getCards[i].onclick = function(index) {
+      return function(e) {
+        if (gameBoard.classList.contains('game-play')) {
+          let counted = i;
+          this.classList.add('marked');
+          if (this.classList.contains('marked')) {
+            clickedCards.push(i);
+          }
+          console.log(clickedCards);
+        }
+      }
+    }(i);
+  }
+}
+
+// shuffles array while keeping the freebie item in center
+function shuffleBoard() {
+  // clear the click tracking array
+  clickedCards = [];
+
+  // isolate and remove center item
+  const fixedIndex = 12;
+  const fixedItem = quotes[fixedIndex];
+  quotes.splice(fixedIndex, 1);
+
+  // randomization of array
+  let currentIndex = quotes.length;
+  while (currentIndex != 0) {
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [quotes[currentIndex], quotes[randomIndex]] = [quotes[randomIndex], quotes[currentIndex]];
+  }
+
+  // add center item back in
+  quotes.splice(fixedIndex,0,fixedItem);
+
+  // generate grid items html
+  let listItem = "";
+  for ( let i = 0; i < quotes.length; i++ ) {
+    listItem += `
+    <div class="grid-item">
+      <div class="card ${quotes[i].name}">
+        <div class="icon"><img src="${quotes[i].icon}" alt="${quotes[i].name}" /></div>
+        <div class="text">${quotes[i].value}</div>
+      </div>
+    </div>
+    `;
+  }
+
+  // update html board class and items
+  gameBoard.classList.add('game-ready');
+  gameBoard.innerHTML = listItem;
+
+  // restart the click tracking
+  cards();
+}

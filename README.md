@@ -1,4 +1,4 @@
-# The People's Bingo v0.03
+# The People's Bingo v0.04
 # Astro Starter Kit: Basics
 
 ```sh
