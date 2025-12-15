@@ -3,12 +3,11 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
+  outDir: './docs',
   vite: {
+
     build: {
-      cssCodeSplit: false
+      cssCodeSplit: false,
     }
   }
-//   build: {
-//     inlineStylesheets: 'never'
-//   }
 });
