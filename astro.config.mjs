@@ -4,10 +4,9 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   outDir: './docs',
-  vite: {
-
-    build: {
-      cssCodeSplit: false,
-    }
+  build: {
+    assets: 'assets'
   }
 });
+
+defineConfig({ build: {  assets: 'custom-folder' } });
