@@ -299,7 +299,7 @@ function checkForWin() {
   if (winningCombo) {
     console.log("WINNER!", winningCombo);
 
-    btnRestart.disabled = false;
+    // btnRestart.disabled = false;
     btnStart.disabled = true;
     btnPause.disabled = true;
     gameBoard.classList.add('game-complete');
@@ -324,11 +324,22 @@ function checkForWin() {
       setTimeout(function(){
         winnerModal.classList.add('modal-active');
         document.querySelector('body').classList.add('modal-open');
-      }, 1000);
+        confetti({
+          particleCount: 100,
+          spread: 85,
+          origin: { y: .6 },
+          disableForReducedMotion: true
+        });
+      }, 500);
 
       winnerClose.addEventListener('click', () => {
         winnerModal.classList.remove('modal-active');
         document.querySelector('body').classList.remove('modal-open');
+        btnStart.disabled = false;
+        // btnRestart.disabled = true;
+        gameBoard.classList.remove('game-complete');
+        resetBoard();
+        btnRestart.disabled = false;
       });
 
       winnerRestartBtn.addEventListener('click', () => {
@@ -338,6 +349,7 @@ function checkForWin() {
         // btnRestart.disabled = true;
         gameBoard.classList.remove('game-complete');
         resetBoard();
+        btnRestart.disabled = false;
       });
     }
   }
@@ -345,6 +357,6 @@ function checkForWin() {
 
 function disableClicks() {
   document.querySelectorAll(".grid-item").forEach(card => {
-    card.onclick = null;    // removes the click handler
+    card.onclick = null;
   });
 }

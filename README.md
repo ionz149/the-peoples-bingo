@@ -1,4 +1,4 @@
-# 👩‍⚖️ The People's Bingo v0.06
+# 👩‍⚖️ The People's Bingo v0.75
 
 ## ⁉️ Why?
 
@@ -6,6 +6,6 @@
 
 I have built a version of bingo based on things Judge Marylin Millian says on The People's Court. In its current iteration you would need to watch quite a few episodes to get a win. Re-working of the quote pool is on the to-do list.
 
-## 👷 Built With
+## 👷 Built With ...
 
 Love but also Astro, HTML, CSS/SASS, Javascript, lots of Google, and a tiny bit of ChatGPT.
