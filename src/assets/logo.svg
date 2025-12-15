@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 301 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-518,-33)">
+        <g transform="matrix(0.735088,0,0,0.735088,175.107018,-5.663701)">
+            <g id="Logo" transform="matrix(1.360382,0,0,1.360382,175.343675,11.785941)">
+                <g transform="matrix(1.006689,0,0,1.086957,121.384615,-89.565217)">
+                    <path d="M370.14,110L391,129.32L391,274.68L370.14,294L112.86,294L92,274.68L92,129.32L112.86,110L370.14,110Z"/>
+                </g>
+                <g transform="matrix(0.946488,0,0,0.994565,135.923077,-70.402174)">
+                    <path d="M375.152,110L391,125.082L391,278.918L375.152,294L107.848,294L92,278.918L92,125.082L107.848,110L375.152,110Z" style="fill:none;stroke:white;stroke-width:6.18px;"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-179,-517.154929)">
+                    <text x="497.978px" y="604.288px" style="font-family:'OPTICraw-Clarendon', 'OPTICraw';font-weight:500;font-size:33px;fill:white;">THE</text>
+                    <text x="410.652px" y="656.437px" style="font-family:'OPTICraw-Clarendon', 'OPTICraw';font-weight:500;font-size:43.5px;fill:white;">PEOPLE&apos;S</text>
+                    <g transform="matrix(43.5,0,0,43.5,630.58775,708.58675)">
+                    </g>
+                    <text x="453.412px" y="708.587px" style="font-family:'OPTICraw-Clarendon', 'OPTICraw';font-weight:500;font-size:43.5px;fill:white;">BINGO</text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -10,56 +10,208 @@ $white: #fff;
   box-sizing: border-box;
 }
 body {
-  background: $gold;
-  color: #000;
+  background: $white;
+  color: #222;
+  font-family: "Corben", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  position: relative;
   text-align: center;
+}
+h1, h2 {
+  font-weight: 700;
+  margin: 0;
+}
+.red {
+  color: $red;
+}
+.inner {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  padding: 15px;
+}
+#header {
+  background: $white;
+  .inner {
+    text-align: center;
+  }
+  .logo {
+    width: 150px;
+    height: auto;
+  }
+}
+.buttons {
+  margin-bottom: 15px;
+}
+.btn {
+  background: $red;
+  border: none;
+  border-radius: 5px;
+  color: $white;
+  display: inline-block;
+  font-family: "Corben", serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  padding: 1px 10px 6px;
+  margin: 0 3px;
+  min-width: 93px;
+  text-align: center;
+  &:hover,
+  &:active {
+    background: $gray-dark;
+    cursor: pointer;
+  }
+  &:disabled {
+    background: #ccc;
+    color: #666;
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}
+#main {
+  background: $gold;
 }
 #bingo {
-  background: white;
-  border-radius: 10px;
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 60vw;
+  // display: flex;
+  // flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
   width: 100%;
-  margin: 0 auto 30px;
-}
-#bingo .grid-item {
-  flex: 0 1 20%;
-  max-width: 20%;
-  padding: 5px;
-  text-align: center;
+  .grid-item {
+    // flex: 0 1 20%;
+    // max-width: 20%;
+    padding: 0px;
+    text-align: center;
+    &.marked {
+      .card {
+        background: $red;
+        color: $white;
+        pointer-events: none;
+      }
+    }
+    .card {
+      background: $offwhite;
+      border-radius: 10px;
+      padding: 10px;
+      // padding: clamp(10px, 2.8vw, 15px);
+      font-size: clamp(10px, 2.1vw, 16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      position: relative;
+      .icon {
+        // display: none;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        img {
+          width: 10px;
+          height: auto;
+        }
+      }
+      .text {
+        // border-radius: 7px;
+        // color: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        // font-size: 14px;
+        font-size: clamp(10px, 2vw, 16px);
+        //height: 64px;
+        position: relative;
+        p {
+          &:before {
+            content:'“';
+            display: inline;
+            white-space: nowrap;
+          }
+          &:after {
+            content: '”';
+            display: inline-block;
+            white-space: nowrap;
+          }
+        }
+      }
+      // &.sm .text {
+      //   // font-size: 10px;
+      //   // font-size: 0.625rem;
+      //   // font-size: clamp( .625rem, .1vw + 1rem, 1.3rem)
+      //   font-size: 10px;
+      //   font-size: clamp(1rem,.9rem + .5vw,1.3rem);
+      // }
+      &.md .text {
+        // font-size: 12px;
+        // font-size: 0.75rem;
+        // font-size: clamp(.75rem, .3vw + 1rem, 1.5rem);
+        font-size: clamp(12px, 2.25vw, 16px);
+      }
+      &.lg .text {
+        // font-size: 14px;
+        // font-size: 0.875rem;
+        // font-size: clamp(.875rem, .5vw + 1rem, 1.95rem);
+        font-size: clamp(14px, 2.5vw, 18px);
+      }
+    }
+  }
 }
 
-#bingo .grid-item .card {
-  background: brown;
-  border-radius: 10px;
-  padding: 40px 0 90px;
-  position: relative;
+#footer {
+  background: $gray;
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      color: $white;
+      .red {
+        display: inline-block;
+        font-size: 1.4rem;
+        padding: 0 4px;
+        transform: translateY(2px);
+      }
+    }
+  }
 }
-#bingo .grid-item.marked .card {
-  background: gold;
-  pointer-events: none;
+
+.modal-open {
+  overflow: hidden;
 }
-#bingo .grid-item .card .text {
-  border-radius: 7px;
-  color: #fff;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  position: absolute;
-  left: 6px;
-  right: 6px;
-  bottom: 6px;
-  z-index: 666;
-  height: 64px;
-}
-#bingo .grid-item .card .icon {
+.modal {
   display: none;
-}
-#bingo .grid-item .card .icon img {
-  width: 40px;
-  height: auto;
+  background: rgba($gray-dark, .25);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 777;
+  &.modal-active {
+    display: block;
+  }
+  .modal-box {
+    background: #fff;
+    padding: 10px;
+    position: relative;
+    width: 420px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .btn-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
 }
