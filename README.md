@@ -1,6 +1,6 @@
-# 👩‍⚖️ The People's Bingo v0.04
+# 👩‍⚖️ The People's Bingo v0.05
 
-## Why?
+## ⁉️ Why?
 
 > 😖 **Why would you do this?**
 

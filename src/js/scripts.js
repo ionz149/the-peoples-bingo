@@ -125,6 +125,20 @@ const quotes = [
     icon: "https://assets.codepen.io/3180931/star-icon.svg"
   }
 ];
+const winningCombos = [
+  [0,1,2,3,4],
+  [5,6,7,8,9],
+  [10,11,12,13,14],
+  [15,16,17,18,19],
+  [20,21,22,23,24],
+  [0,5,10,15,20],
+  [1,6,11,16,21],
+  [2,7,12,17,22],
+  [3,8,13,18,23],
+  [4,9,14,19,24],
+  [0,6,12,18,24],
+  [4,8,12,16,20]
+];
 const gameBoard = document.getElementById('bingo');
 let clickedCards = new Array();
 
@@ -180,11 +194,14 @@ function cards() {
       return function(e) {
         if (gameBoard.classList.contains('game-play')) {
           let counted = i;
+          if (i === 12) return;
           this.classList.add('marked');
           if (this.classList.contains('marked')) {
             clickedCards.push(i);
+            getCards[i].onclick = null;
           }
           console.log(clickedCards);
+          checkForWin();
         }
       }
     }(i);
@@ -194,7 +211,7 @@ function cards() {
 // shuffles array while keeping the freebie item in center
 function shuffleBoard() {
   // clear the click tracking array
-  clickedCards = [];
+  clickedCards = [12];
 
   // isolate and remove center item
   const fixedIndex = 12;
@@ -216,7 +233,7 @@ function shuffleBoard() {
   let listItem = "";
   for ( let i = 0; i < quotes.length; i++ ) {
     listItem += `
-    <div class="grid-item">
+    <div class="grid-item ${i == 12 ? " marked" : ""}">
       <div class="card ${quotes[i].name}">
         <div class="icon"><img src="${quotes[i].icon}" alt="${quotes[i].name}" /></div>
         <div class="text">${quotes[i].value}</div>
@@ -231,4 +248,21 @@ function shuffleBoard() {
 
   // restart the click tracking
   cards();
+}
+
+function checkForWin() {
+  const winningCombo = winningCombos.find(combo =>
+    combo.every(num => clickedCards.includes(num))
+  );
+
+  if (winningCombo) {
+    console.log("WINNER!", winningCombo);
+    disableClicks();
+  }
+}
+
+function disableClicks() {
+  document.querySelectorAll(".grid-item").forEach(card => {
+    card.onclick = null;    // removes the click handler
+  });
 }

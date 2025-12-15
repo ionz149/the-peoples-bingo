@@ -10,7 +10,36 @@ import Layout from '../layouts/Layout.astro';
 	<h1>The People's Bingo</h1>
 	<div id="bingo">
 	</div>
+
 	<button class="btn btn-shuffle">Shuffle</button>
 	<button class="btn btn-start">Start</button>
 	<button class="btn btn-pause" disabled>Pause</button>
+
+	<div class="info">
+	<ul>
+		<li>
+		<a href="#">About</a>
+		</li>
+		<li>
+		We ❤ Judge Marilyn Milian.
+		</li>
+	</ul>
+	</div>
+
+	<div id="about">
+	<button class="close">X</button>
+	<div class="content">
+		<h2>About this game</h2>
+		<p>This game is loosly based on bingo and was built as a means to better understand coding as I learn. My wife and I love watching People's Court re-runs and keep a running list of out favorite quotes so this was a simple and fun way to merge to things I enjoy. The general vibe is to fire up youtube, pull up The People's Court, and watch a few episodes to try and get a bingo.</p>
+	</div>
+	</div>
+
+	<div id="winner">
+	<button class="close">X</button>
+	<div class="content">
+		<h2>Congratulations!</h2>
+		<p>If you made it this far you must really like The People's Court.</p>
+	</div>
+	</div>
+
 </Layout>
