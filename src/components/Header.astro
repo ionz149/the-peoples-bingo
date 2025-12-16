@@ -1,11 +1,8 @@
 ---
 // import the Image component and the image
 import { Image } from 'astro:assets';
-import myImage from '../assets/the-peoples-bingo-logo.svg'; // Image is 1600x900
+import myImage from '../assets/the-peoples-bingo-logo.svg';
 ---
-
-<!-- `alt` is mandatory on the Image component -->
-
 <header id="header">
 	<div class="inner">
         <h1><Image src={myImage} alt="The People's Bingo" height="99" width="250" class="logo" /></h1>
