@@ -6,27 +6,13 @@ $red: #cc3400;
 $offwhite: #f6e2bf;
 $white: #fff;
 
-/* fonts */
-// <weight>: Use a value from 300 to 800
-// <uniquifier>: Use a unique and descriptive class name
-
-// .open-sans-<uniquifier> {
-//   font-family: "Open Sans", sans-serif;
-//   font-optical-sizing: auto;
-//   font-weight: <weight>;
-//   font-style: normal;
-//   font-variation-settings:
-//     "wdth" 100;
-// }
-
 * {
     box-sizing: border-box;
 }
 body {
     background: $white;
     color: #222;
-    // font-family: "Corben", serif;
-    font-family: "Roboto Slab", serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
     line-height: 1.1;
@@ -38,9 +24,19 @@ body {
     display: flex;
     flex-direction: column;
 }
-h1, h2 {
+h1 {
     font-weight: 700;
     margin: 0;
+}
+h2 {
+    font-weight: 700;
+    margin: 0 0 1rem;
+}
+p {
+    margin: 0 0 1.3rem;
+    &:last-child {
+        margin: 0;
+    }
 }
 .red {
     color: $red;
@@ -72,10 +68,6 @@ h1, h2 {
     border-radius: 5px;
     color: $white;
     display: inline-block;
-    // font-family: "Corben", serif;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
     font-size: 1rem;
     line-height: 1.5;
     padding: 4px 10px;
@@ -118,7 +110,8 @@ h1, h2 {
         }
         .card {
             background: $offwhite;
-            border-radius: 5px;
+            //border-radius: 5px;
+            font-family: "Roboto Slab", serif;
             padding: 14px 10px;
             display: flex;
             align-items: center;
@@ -211,6 +204,9 @@ h1, h2 {
             margin-bottom: 10px;
             &:last-child {
                 margin: 0;
+            }
+            &.love {
+                font-family: "Roboto Slab", serif;
             }
             .red {
                 display: inline-block;
