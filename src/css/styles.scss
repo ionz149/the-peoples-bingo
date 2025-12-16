@@ -140,16 +140,6 @@ p {
             &:hover {
                 cursor: pointer;
             }
-            .icon {
-                display: none;
-                position: absolute;
-                right: 10px;
-                bottom: 10px;
-                img {
-                    width: 10px;
-                    height: auto;
-                }
-            }
             .text {
                 display: flex;
                 flex-wrap: wrap;

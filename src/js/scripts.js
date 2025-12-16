@@ -254,8 +254,7 @@ function resetBoard() {
     listItem += `
     <div class="grid-item ${i == 12 ? " marked" : ""}">
       <div class="card ${quotes[i].name} ${quotes[i].text_size}">
-        <div class="icon"><img src="${quotes[i].icon}" alt="${quotes[i].name}" /></div>
-        <div class="text"><p>${quotes[i].value}</p></div>
+        <div class="text">${quotes[i].value}</div>
       </div>
     </div>
     `;
