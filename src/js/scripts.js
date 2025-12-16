@@ -3,151 +3,126 @@ const quotes = [
   {
     name: "notarized",
     value: "I wouldn't believe you if your tongue came notarized.",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "md"
   },
   {
     name: "contractor",
     value: "I am the daughter of a contractor.",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "sm"
   },
   {
     name: "lying-eyes",
     value: "Who am I gonna believe you or my lying eyes?",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "md"
   },
   {
     name: "bonanza",
     value: "Court is not a bonanza",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "sm"
   },
   {
     name: "fork",
     value: "Stick a fork in me, I'm done!",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "lg"
   },
   {
     name: "barato",
     value: "Lo barato sale caro",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "md"
   },
   {
     name: "macho",
     value: "Quien es mas macho",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "sm"
   },
   {
     name: "rodeo",
     value: "This is not my first rodeo",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "lg"
   },
   {
     name: "voice",
     value: "If you are within the sound of my voice",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "sm"
   },
   {
     name: "diablo",
     value: "Mas sabe el diablo por viejo que por diablo",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "sm"
   },
   {
     name: "hand",
     value: "Money never leaves this hand without a receipt in the other hand.",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "sm"
   },
   {
     name: "panties",
     value: "Time to put your big girl panties on",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "sm"
   },
   {
     name: "freebie",
     value: "On the house!",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "lg"
   },
   {
     name: "toilet-paper",
     value: "Grab the nearest toilet paper and crayon",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "sm"
   },
   {
     name: "lifetime",
     value: "I've been doing this without you my whole life.",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "sm"
   },
   {
     name: "duck-walk",
     value: "If it walks like a duck",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "md"
   },
   {
     name: "litigants",
     value: "People like you are called litigants",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "md"
   },
   {
     name: "phone",
     value: "Do you have a cell phone? Does it have a camera?",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "sm"
   },
   {
     name: "ching-ching",
     value: "Ching ching! Let the cash register ring!",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "md"
   },
   {
     name: "mango",
     value: "Arroz con mango",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "md"
   },
   {
     name: "rough-justice",
     value: "Time for some rough justice!",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "sm"
   },
   {
     name: "rascame",
     value: "Me rascas aquí y me picas allá",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "sm"
   },
   {
     name: "sisters",
     value: "Cradle to the grave",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "md"
   },
   {
     name: "regret",
     value: "Say it, forget it. Write it, regret it.",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "md"
   },
   {
     name: "cocaine",
     value: "Cocaine",
-    icon: "https://assets.codepen.io/3180931/star-icon.svg",
     text_size: "md"
   }
 ];
