@@ -2,128 +2,103 @@ import confetti from 'canvas-confetti';
 const quotes = [
   {
     name: "notarized",
-    value: "I wouldn't believe you if your tongue came notarized.",
-    text_size: "md"
+    value: "I wouldn't believe you if your tongue came notarized."
   },
   {
     name: "contractor",
-    value: "I am the daughter of a contractor.",
-    text_size: "sm"
+    value: "I am the daughter of a contractor."
   },
   {
     name: "lying-eyes",
-    value: "Who am I gonna believe you or my lying eyes?",
-    text_size: "md"
+    value: "Who am I gonna believe you or my lying eyes?"
   },
   {
     name: "bonanza",
-    value: "Court is not a bonanza",
-    text_size: "sm"
+    value: "Court is not a bonanza"
   },
   {
     name: "fork",
-    value: "Stick a fork in me, I'm done!",
-    text_size: "lg"
+    value: "Stick a fork in me, I'm done!"
   },
   {
     name: "barato",
-    value: "Lo barato sale caro",
-    text_size: "md"
+    value: "Lo barato sale caro"
   },
   {
     name: "macho",
-    value: "Quien es mas macho",
-    text_size: "sm"
+    value: "Quien es mas macho"
   },
   {
     name: "rodeo",
-    value: "This is not my first rodeo",
-    text_size: "lg"
+    value: "This is not my first rodeo"
   },
   {
     name: "voice",
-    value: "If you are within the sound of my voice",
-    text_size: "sm"
+    value: "If you are within the sound of my voice"
   },
   {
     name: "diablo",
-    value: "Mas sabe el diablo por viejo que por diablo",
-    text_size: "sm"
+    value: "Mas sabe el diablo por viejo que por diablo"
   },
   {
     name: "hand",
-    value: "Money never leaves this hand without a receipt in the other hand.",
-    text_size: "sm"
+    value: "Money never leaves this hand without a receipt in the other hand."
   },
   {
     name: "panties",
-    value: "Time to put your big girl panties on",
-    text_size: "sm"
+    value: "Time to put your big girl panties on"
   },
   {
     name: "freebie",
-    value: "On the house!",
-    text_size: "lg"
+    value: "On the house!"
   },
   {
     name: "toilet-paper",
-    value: "Grab the nearest toilet paper and crayon",
-    text_size: "sm"
+    value: "Grab the nearest toilet paper and crayon"
   },
   {
     name: "lifetime",
-    value: "I've been doing this without you my whole life.",
-    text_size: "sm"
+    value: "I've been doing this without you my whole life."
   },
   {
     name: "duck-walk",
-    value: "If it walks like a duck",
-    text_size: "md"
+    value: "If it walks like a duck"
   },
   {
     name: "litigants",
-    value: "People like you are called litigants",
-    text_size: "md"
+    value: "People like you are called litigants"
   },
   {
     name: "phone",
-    value: "Do you have a cell phone? Does it have a camera?",
-    text_size: "sm"
+    value: "Do you have a cell phone? Does it have a camera?"
   },
   {
     name: "ching-ching",
-    value: "Ching ching! Let the cash register ring!",
-    text_size: "md"
+    value: "Ching ching! Let the cash register ring!"
   },
   {
     name: "mango",
-    value: "Arroz con mango",
-    text_size: "md"
+    value: "Arroz con mango"
   },
   {
     name: "rough-justice",
-    value: "Time for some rough justice!",
-    text_size: "sm"
+    value: "Time for some rough justice!"
   },
   {
     name: "rascame",
-    value: "Me rascas aquí y me picas allá",
-    text_size: "sm"
+    value: "Me rascas aquí y me picas allá"
   },
   {
     name: "sisters",
-    value: "Cradle to the grave",
-    text_size: "md"
+    value: "Cradle to the grave"
   },
   {
     name: "regret",
-    value: "Say it, forget it. Write it, regret it.",
-    text_size: "md"
+    value: "Say it, forget it. Write it, regret it."
   },
   {
     name: "cocaine",
-    value: "Cocaine",
-    text_size: "md"
+    value: "Cocaine"
   }
 ];
 const winningCombos = [
@@ -149,7 +124,7 @@ resetBoard();
 // buttons
 const btnRestart = document.querySelector('.btn-restart');
 const btnStart = document.querySelector('.btn-start');
-const btnPause = document.querySelector('.btn-pause');
+// const btnPause = document.querySelector('.btn-pause');
 const aboutModal = document.querySelector('#about');
 const aboutClose = document.querySelector('#about .btn-close');
 const aboutBtn = document.querySelector('.btn-about');
@@ -179,28 +154,28 @@ btnRestart.addEventListener('click', () => {
 btnStart.addEventListener('click', () => {
   btnRestart.disabled = true;
   btnStart.disabled = true;
-  btnPause.disabled = false;
+  // btnPause.disabled = false;
   gameBoard.classList.add('game-active');
   gameBoard.classList.add('game-play');
-  if ( gameBoard.classList.contains('game-pause') && gameBoard.classList.contains('game-active') ) {
-    console.log('Start button clicked! Game has re-started.');
-    console.log(clickedCards);
-  } else {
-    console.log('Start button clicked! Game has started');
-    console.log(clickedCards);
-  }
+  // if ( gameBoard.classList.contains('game-pause') && gameBoard.classList.contains('game-active') ) {
+  //   console.log('Start button clicked! Game has re-started.');
+  //   console.log(clickedCards);
+  // } else {
+  //   console.log('Start button clicked! Game has started');
+  //   console.log(clickedCards);
+  // }
   gameBoard.classList.remove('game-pause');
   gameBoard.classList.remove('game-ready');
 });
 
-btnPause.addEventListener('click', () => {
-  btnRestart.disabled = false;
-  btnStart.disabled = false;
-  btnPause.disabled = true;
-  gameBoard.classList.add('game-pause');
-  gameBoard.classList.remove('game-play');
-  console.log('Pause button clicked! Game has been paused.');
-});
+// btnPause.addEventListener('click', () => {
+//   btnRestart.disabled = false;
+//   btnStart.disabled = false;
+//   btnPause.disabled = true;
+//   gameBoard.classList.add('game-pause');
+//   gameBoard.classList.remove('game-play');
+//   console.log('Pause button clicked! Game has been paused.');
+// });
 
 // shuffles array while keeping the freebie item in center
 function resetBoard() {
@@ -228,7 +203,7 @@ function resetBoard() {
   for ( let i = 0; i < quotes.length; i++ ) {
     listItem += `
     <div class="grid-item ${i == 12 ? " marked" : ""}">
-      <div class="card ${quotes[i].name} ${quotes[i].text_size}">
+      <div class="card ${quotes[i].name}">
         <div class="text">${quotes[i].value}</div>
       </div>
     </div>
@@ -276,7 +251,7 @@ function checkForWin() {
 
     // btnRestart.disabled = false;
     btnStart.disabled = true;
-    btnPause.disabled = true;
+    // btnPause.disabled = true;
     gameBoard.classList.add('game-complete');
     gameBoard.classList.remove('game-active');
     gameBoard.classList.remove('game-play');

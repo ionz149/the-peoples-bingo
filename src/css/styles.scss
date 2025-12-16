@@ -58,6 +58,11 @@ p {
         height: auto;
         margin: 0 auto;
     }
+    @media all and (min-width: 768px) {
+        .logo {
+            width: 150px;
+        }
+    }
 }
 .buttons {
     margin-bottom: 15px;
@@ -68,6 +73,9 @@ p {
     border-radius: 5px;
     color: $white;
     display: inline-block;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 1rem;
     line-height: 1.5;
     padding: 4px 10px;
@@ -90,6 +98,14 @@ p {
 #main {
     background: $gold;
     flex: 1;
+}
+.bingo-header {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 15px;
+    .letter {
+        flex: 0 1 20%;
+    }
 }
 #bingo {
     display: grid;
@@ -167,13 +183,7 @@ p {
         .grid-item {
             .card {
                 .text {
-                    font-size: clamp(10px, 1.9vw, 16px);
-                }
-                &.md .text {
                     font-size: clamp(12px, 2.35vw, 16px);
-                }
-                &.lg .text {
-                    font-size: clamp(14px, 2.8vw, 18px);
                 }
             }
         }
