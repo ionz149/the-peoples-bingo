@@ -26,7 +26,7 @@ body {
     background: $white;
     color: #222;
     // font-family: "Corben", serif;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Roboto Slab", serif;
     font-weight: 400;
     font-style: normal;
     line-height: 1.2;
@@ -120,6 +120,9 @@ h1, h2 {
             justify-content: center;
             height: 100%;
             position: relative;
+            &:hover {
+                cursor: pointer;
+            }
             .icon {
                 display: none;
                 position: absolute;
@@ -200,6 +203,7 @@ h1, h2 {
     left: 0;
     width: 100%;
     height: 100%;
+    padding: 15px;
     position: fixed;
     z-index: 80;
     &.modal-active {
@@ -209,7 +213,8 @@ h1, h2 {
         background: #fff;
         padding: 10px;
         position: relative;
-        width: 420px;
+        max-width: 420px;
+        width: 100%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
