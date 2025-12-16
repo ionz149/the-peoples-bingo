@@ -156,6 +156,15 @@ h1, h2 {
             }
         }
     }
+    @media all and (min-width: 410px) {
+        .grid-item {
+            .card {
+                .text {
+                    font-size: .6rem;
+                }
+            }
+        }
+    }
     @media all and (min-width: 460px) {
         .grid-item {
             .card {
