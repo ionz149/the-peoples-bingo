@@ -123,7 +123,7 @@ resetBoard();
 
 // buttons
 const btnRestart = document.querySelector('.btn-restart');
-const btnStart = document.querySelector('.btn-start');
+// const btnStart = document.querySelector('.btn-start');
 // const btnPause = document.querySelector('.btn-pause');
 const aboutModal = document.querySelector('#about');
 const aboutClose = document.querySelector('#about .btn-close');
@@ -144,29 +144,32 @@ aboutClose.addEventListener('click', () => {
 
 btnRestart.addEventListener('click', () => {
   resetBoard();
-  btnStart.disabled = false;
+  // btnStart.disabled = false;
+  gameBoard.classList.remove('game-complete');
   console.log('Shuffle button clicked!');
-  gameBoard.classList.remove('game-active');
-  gameBoard.classList.remove('game-pause');
-  gameBoard.classList.add('game-ready');
+  // gameBoard.classList.remove('game-active');
+  // gameBoard.classList.remove('game-pause');
+  // gameBoard.classList.add('game-ready');
 });
 
-btnStart.addEventListener('click', () => {
-  btnRestart.disabled = true;
-  btnStart.disabled = true;
-  // btnPause.disabled = false;
-  gameBoard.classList.add('game-active');
-  gameBoard.classList.add('game-play');
-  // if ( gameBoard.classList.contains('game-pause') && gameBoard.classList.contains('game-active') ) {
-  //   console.log('Start button clicked! Game has re-started.');
-  //   console.log(clickedCards);
-  // } else {
-  //   console.log('Start button clicked! Game has started');
-  //   console.log(clickedCards);
-  // }
-  gameBoard.classList.remove('game-pause');
-  gameBoard.classList.remove('game-ready');
-});
+// btnStart.addEventListener('click', () => {
+//   // btnRestart.disabled = true;
+//   // btnStart.disabled = true;
+//   // btnPause.disabled = false;
+//   // gameBoard.classList.add('game-active');
+//   // gameBoard.classList.add('game-play');
+//   // if ( gameBoard.classList.contains('game-pause') && gameBoard.classList.contains('game-active') ) {
+//   //   console.log('Start button clicked! Game has re-started.');
+//   //   console.log(clickedCards);
+//   // } else {
+//   //   console.log('Start button clicked! Game has started');
+//   //   console.log(clickedCards);
+//   // }
+//   console.log('Start button clicked! Game has started');
+//   console.log(clickedCards);
+//   // gameBoard.classList.remove('game-pause');
+//   // gameBoard.classList.remove('game-ready');
+// });
 
 // btnPause.addEventListener('click', () => {
 //   btnRestart.disabled = false;
@@ -211,7 +214,7 @@ function resetBoard() {
   }
 
   // update html board class and items
-  gameBoard.classList.add('game-ready');
+  // gameBoard.classList.add('game-ready');
   gameBoard.innerHTML = listItem;
 
   // restart the click tracking
@@ -250,11 +253,11 @@ function checkForWin() {
     console.log("WINNER!", winningCombo);
 
     // btnRestart.disabled = false;
-    btnStart.disabled = true;
+    // btnStart.disabled = true;
     // btnPause.disabled = true;
     gameBoard.classList.add('game-complete');
-    gameBoard.classList.remove('game-active');
-    gameBoard.classList.remove('game-play');
+    // gameBoard.classList.remove('game-active');
+    // gameBoard.classList.remove('game-play');
 
     disableClicks();
 
@@ -285,7 +288,7 @@ function checkForWin() {
       winnerClose.addEventListener('click', () => {
         winnerModal.classList.remove('modal-active');
         document.querySelector('body').classList.remove('modal-open');
-        btnStart.disabled = false;
+        // btnStart.disabled = false;
         // btnRestart.disabled = true;
         gameBoard.classList.remove('game-complete');
         resetBoard();
@@ -295,7 +298,7 @@ function checkForWin() {
       winnerRestartBtn.addEventListener('click', () => {
         winnerModal.classList.remove('modal-active');
         document.querySelector('body').classList.remove('modal-open');
-        btnStart.disabled = false;
+        // btnStart.disabled = false;
         // btnRestart.disabled = true;
         gameBoard.classList.remove('game-complete');
         resetBoard();

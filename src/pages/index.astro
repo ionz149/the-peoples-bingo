@@ -1,19 +1,10 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-
 <Layout>
 	<main id="main">
 	<div class="inner">
-		<div class="buttons">
-		<button class="btn btn-restart">Restart</button>
-		<button class="btn btn-start">Start</button>
-		<!-- <button class="btn btn-pause" disabled>Pause</button> -->
-		</div>
 		<div class="bingo-header">
 			<div class="letter">B</div>
 			<div class="letter">I</div>
@@ -21,7 +12,7 @@ import Layout from '../layouts/Layout.astro';
 			<div class="letter">G</div>
 			<div class="letter">O</div>
 		</div>
-		<div id="bingo"></div>
+		<div id="bingo" class="game-active game-play"></div>
 	</div>
 	</main>
 </Layout>

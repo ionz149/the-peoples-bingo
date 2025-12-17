@@ -50,6 +50,7 @@ p {
 #header {
     background: $white;
     .inner {
+        position: relative;
         text-align: center;
     }
     .logo {
@@ -57,6 +58,12 @@ p {
         width: 100px;
         height: auto;
         margin: 0 auto;
+    }
+    .btn-restart {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     @media all and (min-width: 768px) {
         .logo {
@@ -80,7 +87,7 @@ p {
     line-height: 1.5;
     padding: 4px 10px;
     margin: 0 3px;
-    min-width: 80px;
+    // min-width: 80px;
     text-align: center;
     &:hover,
     &:active {
@@ -94,6 +101,10 @@ p {
             cursor: not-allowed;
         }
     }
+    img {
+        display: block;
+        transform: scale(.7);
+    }
 }
 #main {
     background: $gold;
@@ -102,9 +113,17 @@ p {
 .bingo-header {
     display: flex;
     justify-content: center;
-    padding: 0 0 15px;
+    padding: 0 0 15px 0;
     .letter {
         flex: 0 1 20%;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+    @media all and (min-width: 460px) {
+        .letter {
+            font-size: clamp(1.5rem, 2.5vw, 3rem);
+        }
     }
 }
 #bingo {
@@ -164,9 +183,6 @@ p {
                 font-size: .5rem;
                 font-weight: 500;
                 position: relative;
-                p {
-                    margin: 0;
-                }
             }
         }
     }
@@ -183,7 +199,7 @@ p {
         .grid-item {
             .card {
                 .text {
-                    font-size: clamp(12px, 2.35vw, 16px);
+                    font-size: clamp(.75rem, 2.35vw, 1rem);
                 }
             }
         }
@@ -219,6 +235,9 @@ p {
     @media all and (min-width: 768px) {
         .footer-links {
             flex-direction: row;
+            li {
+                margin: 0;
+            }
         }
     }
 }
@@ -253,5 +272,24 @@ p {
         position: absolute;
         right: 10px;
         top: 10px;
+        background: $red;
+        border: none;
+        border-radius: 5px;
+        color: $white;
+        display: inline-block;
+        // font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1rem;
+        line-height: 1;
+        padding: 6px 10px;
+        margin: 0 3px;
+        // min-width: 80px;
+        text-align: center;
+        &:hover,
+        &:active {
+            background: $gray-dark;
+            cursor: pointer;
+        }
     }
 }

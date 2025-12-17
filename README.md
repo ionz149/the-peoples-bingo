@@ -1,4 +1,4 @@
-# 👩‍⚖️ The People's Bingo v0.78
+# 👩‍⚖️ The People's Bingo v0.8
 
 ## ⁉️ Why?
 
