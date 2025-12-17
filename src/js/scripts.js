@@ -123,8 +123,6 @@ resetBoard();
 
 // buttons
 const btnRestart = document.querySelector('.btn-restart');
-// const btnStart = document.querySelector('.btn-start');
-// const btnPause = document.querySelector('.btn-pause');
 const aboutModal = document.querySelector('#about');
 const aboutClose = document.querySelector('#about .btn-close');
 const aboutBtn = document.querySelector('.btn-about');
@@ -144,41 +142,9 @@ aboutClose.addEventListener('click', () => {
 
 btnRestart.addEventListener('click', () => {
   resetBoard();
-  // btnStart.disabled = false;
   gameBoard.classList.remove('game-complete');
   console.log('Shuffle button clicked!');
-  // gameBoard.classList.remove('game-active');
-  // gameBoard.classList.remove('game-pause');
-  // gameBoard.classList.add('game-ready');
 });
-
-// btnStart.addEventListener('click', () => {
-//   // btnRestart.disabled = true;
-//   // btnStart.disabled = true;
-//   // btnPause.disabled = false;
-//   // gameBoard.classList.add('game-active');
-//   // gameBoard.classList.add('game-play');
-//   // if ( gameBoard.classList.contains('game-pause') && gameBoard.classList.contains('game-active') ) {
-//   //   console.log('Start button clicked! Game has re-started.');
-//   //   console.log(clickedCards);
-//   // } else {
-//   //   console.log('Start button clicked! Game has started');
-//   //   console.log(clickedCards);
-//   // }
-//   console.log('Start button clicked! Game has started');
-//   console.log(clickedCards);
-//   // gameBoard.classList.remove('game-pause');
-//   // gameBoard.classList.remove('game-ready');
-// });
-
-// btnPause.addEventListener('click', () => {
-//   btnRestart.disabled = false;
-//   btnStart.disabled = false;
-//   btnPause.disabled = true;
-//   gameBoard.classList.add('game-pause');
-//   gameBoard.classList.remove('game-play');
-//   console.log('Pause button clicked! Game has been paused.');
-// });
 
 // shuffles array while keeping the freebie item in center
 function resetBoard() {
@@ -206,15 +172,15 @@ function resetBoard() {
   for ( let i = 0; i < quotes.length; i++ ) {
     listItem += `
     <div class="grid-item ${i == 12 ? " marked" : ""}">
-      <div class="card ${quotes[i].name}">
+      <button class="card ${quotes[i].name}">
         <div class="text">${quotes[i].value}</div>
-      </div>
+      </button>
     </div>
     `;
   }
 
   // update html board class and items
-  // gameBoard.classList.add('game-ready');
+
   gameBoard.innerHTML = listItem;
 
   // restart the click tracking
@@ -252,12 +218,7 @@ function checkForWin() {
   if (winningCombo) {
     console.log("WINNER!", winningCombo);
 
-    // btnRestart.disabled = false;
-    // btnStart.disabled = true;
-    // btnPause.disabled = true;
     gameBoard.classList.add('game-complete');
-    // gameBoard.classList.remove('game-active');
-    // gameBoard.classList.remove('game-play');
 
     disableClicks();
 
@@ -276,6 +237,7 @@ function checkForWin() {
       }
       setTimeout(function(){
         winnerModal.classList.add('modal-active');
+        winnerModal.querySelector('.modal-box').focus();
         document.querySelector('body').classList.add('modal-open');
         confetti({
           particleCount: 100,
@@ -288,21 +250,19 @@ function checkForWin() {
       winnerClose.addEventListener('click', () => {
         winnerModal.classList.remove('modal-active');
         document.querySelector('body').classList.remove('modal-open');
-        // btnStart.disabled = false;
-        // btnRestart.disabled = true;
         gameBoard.classList.remove('game-complete');
         resetBoard();
         btnRestart.disabled = false;
+        btnRestart.focus();
       });
 
       winnerRestartBtn.addEventListener('click', () => {
         winnerModal.classList.remove('modal-active');
         document.querySelector('body').classList.remove('modal-open');
-        // btnStart.disabled = false;
-        // btnRestart.disabled = true;
         gameBoard.classList.remove('game-complete');
         resetBoard();
         btnRestart.disabled = false;
+        btnRestart.focus();
       });
     }
   }

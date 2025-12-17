@@ -109,6 +109,11 @@ p {
 #main {
     background: $gold;
     flex: 1;
+    @media all and (min-width: 768px) {
+        .inner {
+            max-width: 760px;
+        }
+    }
 }
 .bingo-header {
     display: flex;
@@ -145,6 +150,7 @@ p {
         }
         .card {
             background: $offwhite;
+            border: none;
             //border-radius: 5px;
             font-family: "Roboto Slab", serif;
             padding: 14px 10px;
@@ -153,6 +159,7 @@ p {
             justify-content: center;
             height: 100%;
             position: relative;
+            width: 100%;
             &:before,
             &:after {
                 display: block;
