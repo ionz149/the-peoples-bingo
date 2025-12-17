@@ -301,3 +301,14 @@ p {
         }
     }
 }
+.view-git {
+    color: $gray-dark;
+    display: flex;
+    font-size: .8rem;
+    justify-content: center;
+    align-items: end;
+    text-decoration: none;
+    img {
+        margin-right: 5px;
+    }
+}
