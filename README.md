@@ -12,8 +12,6 @@ Love but also Astro, HTML, CSS/SASS, Javascript, lots of Google, and a tiny bit 
 
 ## 🚧 The Future
 
-🔘 Larger source of quotes to incorporate some lobs to cut down on game time
-
-🔘 Highlight relevant column header letter when card is clicked
-
-🔘 Bonus section for Harvey, Douglas and Doug
+- 🔘 Larger source of quotes to incorporate some lobs to cut down on game time
+- 🔘 Highlight relevant column header letter when card is clicked
+- 🔘 Bonus section for Harvey, Douglas and Doug
