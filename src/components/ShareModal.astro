@@ -53,8 +53,8 @@ const BUTTONS = [FacebookShareButton, LinkedInShareButton, RedditShareButton, Tw
 <script>
     const shareModal = document.querySelector(".modal-share");
     const shareClose = document.querySelector(".modal-share .btn-close");
-    shareClose.addEventListener('click', () => {
-        shareModal.classList.remove('modal-active');
-        document.querySelector('body').classList.remove('modal-open');
+    shareClose?.addEventListener('click', () => {
+        shareModal?.classList.remove('modal-active');
+        document.querySelector('body')?.classList.remove('modal-open');
     });
 </script>

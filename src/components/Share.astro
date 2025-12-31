@@ -12,8 +12,6 @@ import shareImage from '../assets/share.svg';
 
     if (isMobile) {
         console.log("isMobile: " + isMobile);
-        // shareModal?.classList.remove('modal-active');
-        // document.querySelector('body').classList.remove('modal-open');
         if (navigator.share) {
             const shareData = {
                 title: "The People's Bingo",
@@ -21,22 +19,19 @@ import shareImage from '../assets/share.svg';
                 url: "https://ionz149.github.io/the-peoples-bingo/",
             };
 
-            // const resultPara = document.querySelector(".result");
-
             // Share must be triggered by "user activation"
-            shareButton.addEventListener("click", async () => {
+            shareButton?.addEventListener("click", async () => {
             try {
                 await navigator.share(shareData);
-                // resultPara.textContent = "MDN shared successfully";
             } catch (err) {
                 // resultPara.textContent = `Error: ${err}`;
             }
             });
         }
     } else {
-        shareButton.addEventListener('click', () => {
-            shareModal.classList.add('modal-active');
-            document.querySelector('body').classList.add('modal-open');
+        shareButton?.addEventListener('click', () => {
+            shareModal?.classList.add('modal-active');
+            document.querySelector('body')?.classList.add('modal-open');
         });
     }
 </script>
