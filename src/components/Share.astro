@@ -18,7 +18,7 @@ import shareImage from '../assets/share.svg';
             const shareData = {
                 title: "The People's Bingo",
                 text: "The People's Bingo is a People's Court themed bingo game for the true fan of The Honorable Judge Marilyn Milian.",
-                url: "https://developer.mozilla.org",
+                url: "https://ionz149.github.io/the-peoples-bingo/",
             };
 
             // const resultPara = document.querySelector(".result");
@@ -34,8 +34,8 @@ import shareImage from '../assets/share.svg';
             });
         }
     } else {
-        shareButton?.addEventListener('click', () => {
-            shareModal?.classList.add('modal-active');
+        shareButton.addEventListener('click', () => {
+            shareModal.classList.add('modal-active');
             document.querySelector('body').classList.add('modal-open');
         });
     }
