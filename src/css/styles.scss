@@ -30,13 +30,19 @@ h1 {
 }
 h2 {
     font-weight: 700;
-    margin: 0 0 1rem;
+    margin: 0 0 .75rem;
 }
 p {
     margin: 0 0 1.3rem;
     &:last-child {
         margin: 0;
     }
+}
+hr {
+    background-color: $red;
+    border: 0;
+    height: 2px;
+    margin: 0 0 .5rem 0;
 }
 .red {
     color: $red;
@@ -48,22 +54,21 @@ p {
     padding: 15px;
 }
 #header {
+    position: relative;
     background: $white;
+    z-index: 7;
     .inner {
-        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         text-align: center;
+        width: 100%;
     }
     .logo {
         display: block;
         width: 100px;
         height: auto;
         margin: 0 auto;
-    }
-    .btn-restart {
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%);
     }
     @media all and (min-width: 768px) {
         .logo {
@@ -104,6 +109,30 @@ p {
     img {
         display: block;
         transform: scale(.7);
+    }
+}
+.btn-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: $red;
+    border: none;
+    border-radius: 5px;
+    color: $white;
+    display: inline-block;
+    // font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 6px 10px;
+    margin: 0 3px;
+    // min-width: 80px;
+    text-align: center;
+    &:hover,
+    &:active {
+        background: $gray-dark;
+        cursor: pointer;
     }
 }
 #main {
@@ -275,30 +304,6 @@ p {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-    }
-    .btn-close {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        background: $red;
-        border: none;
-        border-radius: 5px;
-        color: $white;
-        display: inline-block;
-        // font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 1rem;
-        line-height: 1;
-        padding: 6px 10px;
-        margin: 0 3px;
-        // min-width: 80px;
-        text-align: center;
-        &:hover,
-        &:active {
-            background: $gray-dark;
-            cursor: pointer;
-        }
     }
 }
 .view-git {

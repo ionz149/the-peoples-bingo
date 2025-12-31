@@ -1,0 +1,60 @@
+---
+import {
+    FacebookShareButton,
+    LinkedInShareButton,
+    RedditShareButton,
+    TwitterShareButton,
+    SocialShare
+} from "astro-social-share";
+const BUTTONS = [FacebookShareButton, LinkedInShareButton, RedditShareButton, TwitterShareButton];
+---
+<div id="share" class="modal modal-share">
+	<div tabindex="-1" class="modal-box" role="dialog" aria-labelledby="dialog3Title">
+		<div class="content">
+			<h2 id="dialog3Title">Share via</h2>
+            <SocialShare
+                buttons={BUTTONS}
+                description="The People's Bingo is a People's Court themed bingo game for the true fan of The Honorable Judge Marilyn Milian."
+                title="The People's Bingo"
+            />
+            <!-- <hr>
+            [Copy Link Here] -->
+		</div>
+		<button class="btn-close">X</button>
+	</div>
+</div>
+
+<slot name="astro-social-share-css">
+  <style is:global>
+    .astro-social-share {
+        margin: 0;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .astro-social-share a {
+        margin: 0 .5rem 0.75rem;
+    }
+    .astro-social-share a,
+    .astro-social-share a:active,
+    .astro-social-share a:visited {
+        color: #000;
+        text-decoration: none;
+
+    }
+    .astro-social-share svg {
+        height: 32px;
+    }
+  </style>
+</slot>
+
+<script>
+    const shareModal = document.querySelector(".modal-share");
+    const shareClose = document.querySelector(".modal-share .btn-close");
+    shareClose.addEventListener('click', () => {
+        shareModal.classList.remove('modal-active');
+        document.querySelector('body').classList.remove('modal-open');
+    });
+</script>
