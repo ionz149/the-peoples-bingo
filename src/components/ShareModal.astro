@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import copyImage from '../assets/copy.svg';
 import {
     FacebookShareButton,
     LinkedInShareButton,
@@ -17,8 +19,7 @@ const BUTTONS = [FacebookShareButton, LinkedInShareButton, RedditShareButton, Tw
                 description="The People's Bingo is a People's Court themed bingo game for the true fan of The Honorable Judge Marilyn Milian."
                 title="The People's Bingo"
             />
-            <!-- <hr>
-            [Copy Link Here] -->
+            <button class="btn btn-copy"><Image src={copyImage} alt="" height="23" width="23" class="copy" loading="lazy" /> Copy URL</button>
 		</div>
 		<button class="btn-close">X</button>
 	</div>
@@ -53,6 +54,10 @@ const BUTTONS = [FacebookShareButton, LinkedInShareButton, RedditShareButton, Tw
 <script>
     const shareModal = document.querySelector(".modal-share");
     const shareClose = document.querySelector(".modal-share .btn-close");
+    const copyURLButton = document.querySelector(".btn-copy");
+    copyURLButton?.addEventListener('click', () => {
+        navigator.clipboard.writeText(window.location.href);
+    });
     shareClose?.addEventListener('click', () => {
         shareModal?.classList.remove('modal-active');
         document.querySelector('body')?.classList.remove('modal-open');
