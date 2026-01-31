@@ -6,6 +6,29 @@ $red: #cc3400;
 $offwhite: #f6e2bf;
 $white: #fff;
 
+/* fonts */
+@font-face {
+  font-family: 'Roboto';
+  src: url('/the-peoples-bingo/fonts/roboto.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/the-peoples-bingo/fonts/roboto-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'RobotoSlab';
+  src: url('/the-peoples-bingo/fonts/roboto-slab.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
     box-sizing: border-box;
 }

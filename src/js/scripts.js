@@ -2,103 +2,128 @@ import confetti from 'canvas-confetti';
 const quotes = [
   {
     name: "notarized",
-    value: "I wouldn't believe you if your tongue came notarized."
+    value: "I wouldn't believe you if your tongue came notarized.",
+    lang: "en"
   },
   {
     name: "contractor",
-    value: "I am the daughter of a contractor."
+    value: "I am the daughter of a contractor.",
+    lang: "en"
   },
   {
     name: "lying-eyes",
-    value: "Who am I gonna believe you or my lying eyes?"
+    value: "Who am I gonna believe you or my lying eyes?",
+    lang: "en"
   },
   {
     name: "bonanza",
-    value: "Court is not a bonanza"
+    value: "Court is not a bonanza",
+    lang: "en"
   },
   {
     name: "fork",
-    value: "Stick a fork in me, I'm done!"
+    value: "Stick a fork in me, I'm done!",
+    lang: "en"
   },
   {
     name: "barato",
-    value: "Lo barato sale caro"
+    value: "Lo barato sale caro",
+    lang: "es"
   },
   {
     name: "macho",
-    value: "Quien es mas macho"
+    value: "Quien es mas macho",
+    lang: "es"
   },
   {
     name: "rodeo",
-    value: "This is not my first rodeo"
+    value: "This is not my first rodeo",
+    lang: "en"
   },
   {
     name: "voice",
-    value: "If you are within the sound of my voice"
+    value: "If you are within the sound of my voice",
+    lang: "en"
   },
   {
     name: "diablo",
-    value: "Mas sabe el diablo por viejo que por diablo"
+    value: "Mas sabe el diablo por viejo que por diablo",
+    lang: "es"
   },
   {
     name: "hand",
-    value: "Money never leaves this hand without a receipt in the other hand."
+    value: "Money never leaves this hand without a receipt in the other hand.",
+    lang: "en"
   },
   {
     name: "panties",
-    value: "Time to put your big girl panties on"
+    value: "Time to put your big girl panties on",
+    lang: "en"
   },
   {
     name: "freebie",
-    value: "On the house!"
+    value: "On the house!",
+    lang: "en"
   },
   {
     name: "toilet-paper",
-    value: "Grab the nearest toilet paper and crayon"
+    value: "Grab the nearest toilet paper and crayon",
+    lang: "en"
   },
   {
     name: "lifetime",
-    value: "I've been doing this without you my whole life."
+    value: "I've been doing this without you my whole life.",
+    lang: "en"
   },
   {
     name: "duck-walk",
-    value: "If it walks like a duck"
+    value: "If it walks like a duck",
+    lang: "en"
   },
   {
     name: "litigants",
-    value: "People like you are called litigants"
+    value: "People like you are called litigants",
+    lang: "en"
   },
   {
     name: "phone",
-    value: "Do you have a cell phone? Does it have a camera?"
+    value: "Do you have a cell phone? Does it have a camera?",
+    lang: "en"
   },
   {
     name: "ching-ching",
-    value: "Ching ching! Let the cash register ring!"
+    value: "Ching ching! Let the cash register ring!",
+    lang: "en"
   },
   {
     name: "mango",
-    value: "Arroz con mango"
+    value: "Arroz con mango",
+    lang: "es"
   },
   {
     name: "rough-justice",
-    value: "Time for some rough justice!"
+    value: "Time for some rough justice!",
+    lang: "en"
   },
   {
     name: "rascame",
-    value: "Me rascas aquí y me picas allá"
+    value: "Me rascas aquí y me picas allá",
+    lang: "es"
   },
   {
     name: "sisters",
-    value: "Cradle to the grave"
+    value: "Cradle to the grave",
+    lang: "en"
   },
   {
     name: "regret",
-    value: "Say it, forget it. Write it, regret it."
+    value: "Say it, forget it. Write it, regret it.",
+    lang: "en"
   },
   {
     name: "cocaine",
-    value: "Cocaine"
+    value: "Cocaine",
+    lang: "en"
   }
 ];
 const winningCombos = [
@@ -173,7 +198,7 @@ function resetBoard() {
     listItem += `
     <div class="grid-item ${i == 12 ? " marked" : ""}">
       <button class="card ${quotes[i].name}">
-        <div class="text">${quotes[i].value}</div>
+        <div class="text" ${quotes[i].lang == "es" ? " lang=\"es\"" : ""}>${quotes[i].value}</div>
       </button>
     </div>
     `;
