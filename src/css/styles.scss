@@ -183,11 +183,41 @@ hr {
         font-size: 1rem;
         font-weight: 700;
         line-height: 1;
+        &.highlight {
+            animation: pulse .7s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+        }
     }
     @media all and (min-width: 460px) {
         .letter {
             font-size: clamp(1.5rem, 2.5vw, 3rem);
         }
+    }
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: translateX(0);
+    }
+
+    6.5% {
+        transform: translateX(-6px) rotateY(-9deg);
+    }
+
+    18.5% {
+        transform: translateX(5px) rotateY(7deg);
+    }
+
+    31.5% {
+        transform: translateX(-3px) rotateY(-5deg);
+    }
+
+    43.5% {
+        transform: translateX(2px) rotateY(3deg);
+    }
+
+    50% {
+        transform: translateX(0);
     }
 }
 #bingo {

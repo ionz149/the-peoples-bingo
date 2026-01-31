@@ -146,6 +146,7 @@ window.addEventListener("load", (event) => {
       [4,8,12,16,20]
     ];
     const gameBoard = document.getElementById('bingo');
+    // const gameHeader = document.querySelectorAll('.letter');
     let clickedCards = new Array();
     // let getCards = Array.from(document.querySelectorAll('.grid-item'));
     console.log('Game ready!');
@@ -232,11 +233,37 @@ window.addEventListener("load", (event) => {
                 clickedCards.push(i);
                 getCards[i].onclick = null;
               }
+              switch (i) {
+                case 0: case 5: case 10: case 15: case 20:
+                  highlightColumnLetter('.letter-b');
+                  break;
+                case 1: case 6: case 11: case 16: case 21:
+                  highlightColumnLetter('.letter-i');
+                  break;
+                case 2: case 7: case 12: case 17: case 22:
+                  highlightColumnLetter('.letter-n');
+                  break;
+                case 3: case 8: case 13: case 18: case 23:
+                  highlightColumnLetter('.letter-g');
+                  break;
+                case 4: case 9: case 14: case 19: case 24:
+                  highlightColumnLetter('.letter-o');
+                  break;
+              }
               console.log(clickedCards);
               checkForWin();
             }
           }
         }(i);
+      }
+    }
+
+    function highlightColumnLetter(className) {
+      if (!document.querySelector(className).classList.contains('highlight')) {
+        document.querySelector(className).classList.add('highlight');
+        setTimeout(function(){
+          document.querySelector(className).classList.remove('highlight');
+        }, 500);
       }
     }
 
