@@ -19,7 +19,7 @@ const BUTTONS = [FacebookShareButton, LinkedInShareButton, RedditShareButton, Tw
                 description="The People's Bingo is a People's Court themed bingo game for the true fan of The Honorable Judge Marilyn Milian."
                 title="The People's Bingo"
             />
-            <button class="btn btn-copy"><Image src={copyImage} alt="" height="23" width="23" class="copy" loading="lazy" /> Copy URL</button>
+            <button class="btn btn-copy"><Image src={copyImage} alt="" height="23" width="23" class="copy" loading="lazy" /> <div class="copy-text">Copy URL</div></button>
 		</div>
 		<button class="btn-close">X</button>
 	</div>
@@ -55,8 +55,13 @@ const BUTTONS = [FacebookShareButton, LinkedInShareButton, RedditShareButton, Tw
     const shareModal = document.querySelector(".modal-share");
     const shareClose = document.querySelector(".modal-share .btn-close");
     const copyURLButton = document.querySelector(".btn-copy");
+    const copyText = document.querySelector(".copy-text");
     copyURLButton?.addEventListener('click', () => {
         navigator.clipboard.writeText(window.location.href);
+        copyText.innerHTML = "Copied!";
+        setTimeout(function(){
+            copyText.innerHTML = "Copy URL";
+        }, 2000);
     });
     shareClose?.addEventListener('click', () => {
         shareModal?.classList.remove('modal-active');

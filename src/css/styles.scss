@@ -138,8 +138,9 @@ hr {
 .btn-copy {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     margin: 0 auto;
+    width: 117px;
 }
 #main {
     background: $gold;
